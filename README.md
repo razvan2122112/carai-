@@ -15,9 +15,11 @@ Une application web moderne d'assistant IA pour les conducteurs avec reconnaissa
 
 [Voir la démo](https://VOTRE-USERNAME.github.io/carai)
 
-## 🛠️ Installation
-```bash
-git clone https://github.com/VOTRE-USERNAME/carai.git
-cd carai
-npm install
-npm start
+🎯 Nouvelle fonctionnalités de CarAI :
+
+✅ Intelligence artificielle avec base de connaissances automobiles
+✅ Réponses spécialisées pour bruits, voyants, entretien, etc.
+✅ Historique des questions avec compteur
+✅ Interface moderne avec animations
+✅ Design responsive pour mobile
+✅ Expertise ciblée sur 6 domaines automobiles
