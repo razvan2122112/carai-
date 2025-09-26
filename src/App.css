@@ -1,16 +1,16 @@
 .App {
-  text-align: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   padding: 20px;
 }
 
 .App-header {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 40px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .App-header h1 {
@@ -21,28 +21,24 @@
 
 .App-header p {
   color: #7f8c8d;
-  font-size: 1.1rem;
   margin: 0;
+  font-size: 1.2rem;
 }
 
 .App-main {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.question-form {
-  background-color: rgba(255, 255, 255, 0.95);
+.question-container {
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.input-group {
-  margin-bottom: 20px;
-}
-
-.question-form textarea {
+.question-input {
   width: 100%;
   padding: 15px;
   border: 2px solid #e1e8ed;
@@ -50,17 +46,18 @@
   font-size: 16px;
   font-family: inherit;
   resize: vertical;
-  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
-.question-form textarea:focus {
+.question-input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #2a5298;
+  box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
 }
 
-.question-form button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.submit-btn {
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -68,75 +65,67 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease;
   min-width: 200px;
 }
 
-.question-form button:hover:not(:disabled) {
+.submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
-.question-form button:disabled {
+.submit-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
 
-.response-section {
-  background-color: rgba(255, 255, 255, 0.95);
+.response-container {
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.response-section h3 {
+.response-container h3 {
   color: #2c3e50;
   margin-top: 0;
   margin-bottom: 15px;
 }
 
-.response-box {
-  background-color: #f8f9fa;
+.response-text {
+  background: #f8f9fa;
   padding: 20px;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #2a5298;
   line-height: 1.6;
   color: #2c3e50;
 }
 
-.features {
-  background-color: rgba(255, 255, 255, 0.95);
+.info-section {
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.features h3 {
+.info-section h3 {
   color: #2c3e50;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
-.features ul {
+.info-section ul {
   list-style: none;
   padding: 0;
 }
 
-.features li {
-  background-color: #f8f9fa;
+.info-section li {
+  background: #f8f9fa;
   margin: 10px 0;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   border-left: 4px solid #27ae60;
-  transition: transform 0.2s ease;
-}
-
-.features li:hover {
-  transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
@@ -148,9 +137,9 @@
     font-size: 2rem;
   }
   
-  .question-form,
-  .response-section,
-  .features {
+  .question-container,
+  .response-container,
+  .info-section {
     padding: 20px;
   }
 }
