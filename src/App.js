@@ -8,11 +8,20 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!question.trim()) return;
+
     setIsLoading(true);
     
-    // Simulation d'une réponse AI (à remplacer par votre API)
+    // Simulation d'une réponse AI
     setTimeout(() => {
-      setResponse(`Voici une réponse concernant votre question sur l'automobile: "${question}"`);
+      const responses = [
+        `Pour votre question "${question}", je recommande de vérifier les éléments suivants...`,
+        `Concernant "${question}", voici ce que vous devriez savoir...`,
+        `D'après mon analyse de "${question}", la solution pourrait être...`
+      ];
+      
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      setResponse(randomResponse);
       setIsLoading(false);
     }, 1500);
   };
@@ -21,41 +30,45 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>🚗 CarAI Assistant</h1>
-        <p>Votre assistant intelligent pour toutes vos questions automobiles</p>
+        <p>Votre expert automobile intelligent</p>
       </header>
 
       <main className="App-main">
-        <form onSubmit={handleSubmit} className="question-form">
-          <div className="input-group">
+        <div className="question-container">
+          <form onSubmit={handleSubmit}>
             <textarea
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Posez votre question sur l'automobile..."
+              placeholder="Posez votre question automobile (ex: Pourquoi ma voiture fait du bruit au démarrage ?)"
               rows="4"
-              required
+              className="question-input"
             />
-          </div>
-          <button type="submit" disabled={isLoading || !question.trim()}>
-            {isLoading ? '🔄 Analyse en cours...' : '🤖 Demander à CarAI'}
-          </button>
-        </form>
+            <button 
+              type="submit" 
+              disabled={isLoading || !question.trim()}
+              className="submit-btn"
+            >
+              {isLoading ? '🔄 Analyse...' : '🤖 Demander à CarAI'}
+            </button>
+          </form>
+        </div>
 
         {response && (
-          <div className="response-section">
-            <h3>Réponse de CarAI :</h3>
-            <div className="response-box">
+          <div className="response-container">
+            <h3>💡 Réponse CarAI :</h3>
+            <div className="response-text">
               {response}
             </div>
           </div>
         )}
 
-        <div className="features">
-          <h3>Fonctionnalités à venir :</h3>
+        <div className="info-section">
+          <h3>🔧 Que peut faire CarAI ?</h3>
           <ul>
-            <li>🔧 Diagnostic de pannes</li>
-            <li>🛠️ Conseils de maintenance</li>
-            <li>💰 Estimation de réparations</li>
-            <li>📋 Historique des questions</li>
+            <li>Diagnostic de pannes courantes</li>
+            <li>Conseils d'entretien</li>
+            <li>Explications mécaniques simples</li>
+            <li>Recommandations de maintenance</li>
           </ul>
         </div>
       </main>
